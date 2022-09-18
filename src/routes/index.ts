@@ -10,7 +10,6 @@ router.get('/',(req,res) =>{
 router.get('/usuarios',usuarioController.index)
 router.get('/cadastro',usuarioController.visualizaPaginaCadastro)
 router.post('/cadastro',usuarioController.cadastroUsuario)
-
 router.get('/editar/:id',usuarioController.editaUsuario)
 router.post('/editar/:id',usuarioController.atualizaUsuario)
 

@@ -11,9 +11,7 @@ export const index = async (req: Request, res: Response)=>{
 export const visualizaPaginaCadastro = async(req:Request, res: Response) =>{
     res.render("pages/cadastrar")
 } 
-//criando controller para pegar as infos de usuários via BODY
 export const cadastroUsuario = async(req:Request, res: Response) =>{
-    //recebendo os dados do form via body
     let {nome,email} = req.body
     
     if(nome && email){
@@ -22,35 +20,33 @@ export const cadastroUsuario = async(req:Request, res: Response) =>{
             email
         })
     }
-    //após ter salvado, redirecionamos para /usuarios
     res.redirect("/usuarios")
 } 
 export const editaUsuario = async(req:Request, res: Response) =>{
     let {id} = req.params
-    
     let user = await Usuario.findByPk(id)
-
+  
     res.render('pages/editar',{
-        user
+        user,
+        id
     })
 }
-
-export const atualizaUsuario = async(req:Request, res: Response) =>{
+export const atualizaUsuario = async (req:Request, res:Response) =>{
+    //pegando o id que será pela query
     let {id} = req.params
+    //pegando nome e email que será passado no corpo
     let {nome,email} = req.body
 
+    /* atualizando as informações de usuário
+    que pegamos acima */
     await Usuario.update({
         nome,
         email
-    },
-    {
+    },{
         where:{
-            id
+            id:id
         }
     })
 
     res.redirect('/usuarios')
 }
-
-
-
