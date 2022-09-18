@@ -1,0 +1,28 @@
+{{>partials/header}}
+
+<a href="/cadastro">Adicionar Usuário</a>
+
+<table border="1" width="100%">
+    <tr>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>EMAIL</th>
+        <th>AÇÕES</th>
+    </tr>
+
+    {{#users}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{nome}}</td>
+        <td>{{email}}</td>
+        <td>
+            <a href="/editar/{{#user}}{{id}}{{/user}}">[ Editar ]</a>
+            <a href="/excluir/{{#user}}{{id}}{{/user}}">[ Excluir ]</a>
+        </td>
+    </tr>
+    {{/users}}
+
+
+</table>
+
+{{>partials/footer}}
