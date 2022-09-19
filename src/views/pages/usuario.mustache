@@ -17,7 +17,7 @@
         <td>{{email}}</td>
         <td>
             <a href="/editar/{{id}}">[ Editar ]</a>
-            <a href="/excluir/{{id}}">[ Excluir ]</a>
+            <a href="/excluir/{{id}}" onclick="return confirm('Tem certeza que deseja excluir?')">[ Excluir ]</a>
         </td>
     </tr>
     {{/users}}

@@ -32,17 +32,25 @@ export const editaUsuario = async(req:Request, res: Response) =>{
     })
 }
 export const atualizaUsuario = async (req:Request, res:Response) =>{
-    //pegando o id que será pela query
     let {id} = req.params
-    //pegando nome e email que será passado no corpo
     let {nome,email} = req.body
-
-    /* atualizando as informações de usuário
-    que pegamos acima */
     await Usuario.update({
         nome,
         email
     },{
+        where:{
+            id:id
+        }
+    })
+
+    res.redirect('/usuarios')
+}
+
+export const deletaUsuario = async (req:Request, res:Response) =>{
+
+    let {id} = req.params
+
+    await Usuario.destroy({
         where:{
             id:id
         }
