@@ -13,7 +13,7 @@ router.post('/cadastro',usuarioController.cadastroUsuario)
 router.get('/editar/:id',usuarioController.editaUsuario)
 router.post('/editar/:id',usuarioController.atualizaUsuario)
 
-router.get('/exluir/:id',usuarioController.deletaUsuario)
+router.get('/excluir/:id',usuarioController.deletaUsuario)
 
 
 export default router;
