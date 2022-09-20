@@ -1,5 +1,7 @@
 ## Crud Simples com Sequelize
 
+<img src="public/images/print-crud.png" alt="crud">
+
 ### Crie o SQL em seu banco de dados
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
@@ -14,7 +16,7 @@ CREATE TABLE `usuarios` (
 `npm install`
 
 ### Para rodar o projeto
-`npm run start-dev`
+`npm run start-dev` abra o navegador na porta localhost:2000/usuarios
 
 
 

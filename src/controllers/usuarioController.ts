@@ -45,7 +45,6 @@ export const atualizaUsuario = async (req:Request, res:Response) =>{
 
     res.redirect('/usuarios')
 }
-
 export const deletaUsuario = async (req:Request, res:Response) =>{
 
     let {id} = req.params

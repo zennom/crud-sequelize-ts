@@ -13,6 +13,7 @@ router.post('/cadastro',usuarioController.cadastroUsuario)
 router.get('/editar/:id',usuarioController.editaUsuario)
 router.post('/editar/:id',usuarioController.atualizaUsuario)
 
+//criando a rota para excluir o usuário
 router.get('/excluir/:id',usuarioController.deletaUsuario)
 
 
